@@ -14,7 +14,10 @@ class Solution:
         # ReLU: max(0, z)
         # return round(your_answer, 5)
         z = np.dot(x, w) + b
-        if activation == 'sigmoid':
-            return np.round(1/(1+np.exp(-z)), 5)
+        if activation == "sigmoid":
+            sigmoid = 1 / (1 + np.exp(-z))
+            return round(sigmoid, 5)
         else:
-            return np.round(max(0.0,z), 5)
+            relu = np.maximum(0, z)
+            return round(relu, 5)
+
